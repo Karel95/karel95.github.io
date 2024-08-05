@@ -286,7 +286,8 @@ h1 {
 
 .contacto .rectangulo {
   margin-top: -5rem;
-  background-color: rgb(13, 110, 253);
+  background: linear-gradient(155deg, rgb(13, 110, 253), #00fffc);
+  /* background-color: rgb(13, 110, 253); */
   border-radius: 10px;
   box-shadow: 0px 1px 4px 1px white;
 }
@@ -316,6 +317,7 @@ h1 {
 .contacto button:hover {
   background-color: white;
   color: black;
+  transform: scale(1.2) translateY(5px);
 }
 
 .contacto button i {
@@ -347,6 +349,15 @@ footer {
   font-family: 'Quicksand', sans-serif;
 }
 
+/* prueba */
+.iconos-redes-sociales {
+  position: relative;
+  background: linear-gradient(155deg, #00fffc, #eee);
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px 2px rgb(13, 110, 253);
+}
+
 .iconos-redes-sociales a {
   width: 50px;
   height: 50px;
@@ -355,24 +366,25 @@ footer {
   justify-content: center;
   padding: 2px;
   margin: 10px;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 50%;
   transition: all 0.2s ease-in;
 }
 
 .iconos-redes-sociales i {
-  color: white;
+  color: black;
   font-size: 1.5rem;
   transition: all 0.2s ease-in;
 }
 
 .iconos-redes-sociales a:hover {
-  background-color: white;
+  background-color: black;
   border: 2px solid rgb(13, 110, 253);
+  transform: translateY(-5px);
 }
 
 .iconos-redes-sociales a:hover i {
-  color: black;
+  color: white;
 }
 
 .derechos-de-autor {
