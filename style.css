@@ -7,9 +7,9 @@
   --sections-background: #F5F5F5;
   --borders-color: #E0E0E0;
   --card-bg-color: #ffffff;
-  --header-height: 70px;
+  --header-height: 80px;
   --sidebar-width: 240px;
-  --sidebar-collapsed-width: 60px;
+  /* --sidebar-collapsed-width: 60px; */
   --footer-height: 60px;
 }
 /*  */
@@ -37,7 +37,7 @@ body {
   grid-template-areas:
     "header header"
     "sidebar main"
-    "footer footer";
+    "sidebar footer";
   grid-template-columns: var(--sidebar-width) 1fr;
   grid-template-rows: var(--header-height) 1fr var(--footer-height);
   min-height: 100vh;
@@ -75,6 +75,7 @@ header {
 }
 
 .logo {
+  margin: 1rem;
   width: 3rem;
   height: 3rem;
   font-size: 1.5rem;
@@ -82,7 +83,6 @@ header {
 }
 
 nav a {
-  margin-left: 1rem;
   transition: opacity 0.3s ease;
 }
 
@@ -103,12 +103,27 @@ nav a:hover {
   justify-content: space-between;
 }
 
+.navbar-expand-lg .container-fluid {
+  margin-left: 3rem;
+  border: none;
+}
+
+.container-fluid{
+  width: 60%;
+}
+
 .show {
   background: var(--sections-background);
   transition: grid-template-columns 0.3s ease;
 }
 
+.navbar-expand-lg .show {
+  padding: 2rem;
+  border: 3px solid var(--borders-color);
+}
+
 .nav-link {
+  color: var(--text-primary-color);
   font-size: 1rem;
   font-weight: bold;
 }
@@ -117,13 +132,18 @@ nav a:hover {
   color: gray;
 }
 
+.nav-link:active {
+  color: gray;
+}
+
+
 .nav-link.disabled {
   color: gray;
 }
 
 .navbar-collapse.show {
   padding: 1rem;
-  border-radius: .375rem;
+  border-radius: 1rem;
 }
 
 .navbar-toggler {
@@ -137,6 +157,12 @@ nav a:hover {
 
 .dropdown-item {
   color: var(--text-primary-color);
+}
+
+.mode-switcher {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
 }
 
 .theme-toggle {
@@ -199,12 +225,13 @@ body.sidebar-collapsed .sidebar-nav a span {
 }
 
 .sidebar-toggle {
+  margin: 0.5rem;
   position: absolute;
   bottom: 1rem;
   right: 1rem;
   background-color: var(--sections-background);
   border: none;
-  color: white;
+  color: var(--text-primary-color);
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
@@ -584,14 +611,6 @@ footer {
 
 
 
-
-
-
-
-
-
-
-
 /* Estilos generales */
 
 section {
@@ -772,6 +791,13 @@ footer {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .navbar-collapse.show {
+    border: none;
+  }
+}
+
+
 @media screen and (max-width: 800px) {
   .testimonio-imagen {
     height: 120px;
@@ -788,3 +814,12 @@ footer {
     max-width: 600px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .sidebar-collapsed main {
+    margin-left: 4rem;
+  }
+}
+
+
+
